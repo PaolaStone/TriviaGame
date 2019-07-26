@@ -4,27 +4,33 @@
         <!-- <tittle> Crystal game</tittle> -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="css\style.css">
     </head>
 
     <body>
        
-        <div class="container-fluid">
-       
-            <h1 class="text-center alert alert-secondary">Avatrivia</h1>
+        <!-- <div class="jumbotron" >
+            
+            
+           
+        </div> -->
         
-        </div>
-        
-        <!-- The random number goes here -->
-
-        <div  class="container-fluid text-center alert alert-primary" >
-            <h3 id= "initialMessage">Question:</h3>
+        <div  class="container-fluid text-center">
+                <img src="images\friendsLogo.jpg">
+                <br>
+                <button id="start"><h2>Start</h2></button>
+                                    
                     
         </div>
+        <br>
+
         
+        <div class="container-fluid text-center alert alert-primary">
+            <h2 id = "timer"> </h2>
+        </div>
         <div class="row" >
-            <div  class="col-sm p-3 mb-2 alert alert-secondary text-center" style="max-width: 50%rem;">
-                <h3>the questions go here</h3>
+            <div   class="col-sm p-3 mb-2 alert alert-secondary text-center" style="max-width: 50%rem;">
+                <h4 id = "question" ></h4>
                 <br>
                 <br>
                 <br>
@@ -33,34 +39,54 @@
             </div>
     
     
-            <div  class="col-sm p-3 mb-2 alert alert-secondary text-center" style="max-width: 33%rem;">
-                    <h3 > the answers go here</h3> 
+            <div  class="col-sm p-3 mb-2 alert alert-secondary text-left" style="max-width: 33%rem;">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadios">
+                    <label  id = "option1" class="form-check-label" for="gridRadios1"></label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadios">
+                    <label id = "option2" class="form-check-label" for="gridRadios1"></label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadios">
+                    <label id = "option3" class="form-check-label" for="gridRadios1"></label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadios">
+                    <label id = "option4" class="form-check-label" for="gridRadios1"></label>
+                </div>
+                <br>
+
+                <button type="button" class="btn btn-dark">Check your answer</button>
+
+
+
+                
+
+                    
+                    
             </div>
         </div>
-        <div class="container-fluid text-center alert alert-primary">
-            <h4 > Time (progress bar?) </h4>
-        </div>
+       
 
             
         </div>
 
-        <div class="row" >
-            <div  class="col-sm p-3 mb-2 alert alert-secondary text-center" style="max-width: 33%rem;">
-                <h4> Imgages...</h4>        
-                
-             </div>
-
-
-             <div  class="col-sm p-3 mb-2 alert alert-secondary text-center" style="max-width: 33%rem;">
-               <h4>Images....</h4>           
-                    
-            </div>
-      
+        <div class="jumbotron">
+       
+            <h1 style= "text-align: center">Images</h1>
+            
         </div>
+      
+        
 
 
 
-        <script type="text/javascript" src="assets\javascript\app.js"></script>
+        <script type="text/javascript" src="javascript\app.js"></script>
 
     </body>
 </html>
