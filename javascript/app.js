@@ -61,13 +61,32 @@ var rightAnswers = 0;
 var wrongAnswers = 0;
 var noAnswers = 0;
 
-$("#start").click(startQuestions);
 
+timerShow();
+gameAreaHide();
+imagesHide();
+
+
+// $("#start").on("click",(startQuestions));
 
 var number = 10;
 var intervalId;
 var i = 0;
 
+function onClick (){
+    var number = 10;
+    var intervalId;
+    var i = 0;
+    var rightAnswers = 0;
+    var wrongAnswers = 0;
+    var noAnswers = 0;
+    $("#right").empty();
+    $("#wrong").empty();
+    $("#noAnswer").empty();
+    $("#start").on("click",(startQuestions));
+}
+
+onClick();
 
 
 function gameAreaHide() {
@@ -80,26 +99,42 @@ function gameAreaShow() {
     x.style.display = "block";
 }
 
+function screenHide() {
+    var x = document.getElementById("screen");
+    x.style.display = "none";
+}
+
+function screenShow() {
+    var x = document.getElementById("screen");
+    x.style.display = "block";
+}
+
 
 function startQuestions(){
     if (i > 9){
-        stop();
-        alert("End Of Game");
-
-    };
-    imagesHide();
-    timerShow();
-    gameAreaShow();
+        // alert("End Of Game");
+        screenShow();
+        timerHide();
+        imagesHide();
+        $("#right").append("Correct answers:  " + rightAnswers);
+        $("#wrong").append("Incorrect answers:  " + wrongAnswers);
+        $("#noAnswer").append("Not answered:  " + noAnswers);
+                
+       }else{
+        screenHide();
+        imagesHide();
+        timerShow();
+        gameAreaShow();
        
-    $("#question").text(questionsArray[i].question);
-    $("#option1").text(questionsArray[i].choices[0]);
-    $("#option2").text(questionsArray[i].choices[1]);
-    $("#option3").text(questionsArray[i].choices[2]);
-    $("#option4").text(questionsArray[i].choices[3]);
-        
-    nextQuestion();
-    run();
-
+        $("#question").text(questionsArray[i].question);
+        $("#option1").text(questionsArray[i].choices[0]);
+        $("#option2").text(questionsArray[i].choices[1]);
+        $("#option3").text(questionsArray[i].choices[2]);
+        $("#option4").text(questionsArray[i].choices[3]);
+            
+        nextQuestion();
+        run();
+    }
     
 }
 
@@ -156,7 +191,7 @@ function timerShow(){
 
 
 function delay(){
-    setTimeout(startQuestions,3000)
+    setTimeout(startQuestions,1000)
 }
 
 function selection(){
