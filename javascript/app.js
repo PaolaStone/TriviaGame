@@ -5,8 +5,8 @@ $(document).ready(function(){
             question: "Who was Ross's second wife?",
             choices: ["Monica" , "Emma",  "Emily",  "Rachel" ],
             answer: ["Emily", "2"],
-            imageRight: "correct1.gif",
-            imageWrong: "images\wrong1.gif",
+            imageRight: "images/correct1.gif",
+            imageWrong: "images/wrong1.gif",
         },
     
         {
@@ -60,19 +60,15 @@ $(document).ready(function(){
     var rightAnswers = 0;
     var wrongAnswers = 0;
     var noAnswers = 0;
-    
-    
+    var number = 10;
+    var i = 0;
+    var intervalId;
+
     timerShow();
     gameAreaHide();
     imagesHide();
       
-    
-    var number = 10;
-    var intervalId;
-    var i = 0;
-    
     function reset (){
-        console.log("this is reset")
         number = 10;
         i = 0;
         rightAnswers = 0;
@@ -82,28 +78,17 @@ $(document).ready(function(){
         $("#wrong").empty();
         $("#noAnswer").empty();
         $("#start").on("click",(startQuestions))
-        
-        console.log("this is i on reset: " +i)
         startQuestions()
         
     }
     
-    
-
     function start(){
         $("#start").on("click",(reset)); 
         console.log("this is the start function")
-        
         var number = 10;
-       
-       
-               
-        console.log("this is number on start: " + number)
-        console.log("this is i on start: " +i)
     }
     
     start()
-
 
     function gameAreaHide() {
         var x = document.getElementById("gameArea");
@@ -129,8 +114,6 @@ $(document).ready(function(){
     function startQuestions(){
         
         if (i > 9){
-            
-            
             screenShow();
             timerHide();
             imagesHide();
@@ -138,8 +121,9 @@ $(document).ready(function(){
             $("#wrong").append("Incorrect answers:  " + wrongAnswers);
             $("#noAnswer").append("Not answered:  " + noAnswers);
             i = 0
-            console.log("i at if i>9 at startQuestions  " +i)
+            
             start()
+
             }else{
             screenHide();
             imagesHide();
@@ -155,11 +139,6 @@ $(document).ready(function(){
             nextQuestion();
             run();
         }
-
-        
-        
-       
-        
     }
     
     function nextQuestion() {
@@ -212,54 +191,44 @@ $(document).ready(function(){
         var x = document.getElementById("timer");
         x.style.display = "block";
     }
-    
-    
+        
     function delay(){
         setTimeout(startQuestions,1000)
     }
     
     function selection(){
-    $(".button").click(function() {
-        if($(".button").on("click")) { 
-            if (this.value === questionsArray[i-1].answer[1]) {
-                rightAnswers++
-                console.log("this is rights:  " + rightAnswers)
-                stop();
-                $("#timer").html(" ");
-                $("#timer").html(questionsArray[i-1].answer[0] + "  is the right answer");
-                gameAreaHide();
-                imagesShow();
-                delay();
-                
-    
-    
+        $(".button").click(function() {
+            if($(".button").on("click")) { 
+                if (this.value === questionsArray[i-1].answer[1]) {
+                    rightAnswers++
+                    console.log("this is rights:  " + rightAnswers)
+                    stop();
+                    $("#timer").html(" ");
+                    $("#timer").html(questionsArray[i-1].answer[0] + "  is the right answer");
+                    gameAreaHide();
+                    imagesShow();
+                    delay();
+                    
                 // $("#image").append("<img src= 'images/correct1.gif' />");////Show the image///
-            }else{
-                wrongAnswers++
-                console.log(wrongAnswers)
-                stop();
-                $("#timer").html(" ");
-                $("#timer").html("Wrong! The correct answer is " + questionsArray[i-1].answer[0] );
-                gameAreaHide();
-                imagesShow();
-                delay();
-               
-            }
-        };
-    
-    
-    
-     });
-    
-    
-    
+
+                }else{
+                    wrongAnswers++
+                    console.log(wrongAnswers)
+                    stop();
+                    $("#timer").html(" ");
+                    $("#timer").html("Wrong! The correct answer is " + questionsArray[i-1].answer[0] );
+                    gameAreaHide();
+                    imagesShow();
+                    delay();
+                
+                }
+            };
+        });
     }
     
-    selection();
+selection();
     
-       
-    
-    });
+});
     
     
 
