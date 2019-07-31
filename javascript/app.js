@@ -13,46 +13,64 @@ $(document).ready(function(){
             question: "Who plays Chandler?",
             choices: ["Matt LeBlanc" , "David Schwimmer",  "Joshua Jackson",  "Matthew Perry"],
             answer: ["Matthew Perry", "3"],
+            imageRight: "images/correct2.gif",
+            imageWrong: "images/wrong2.gif",
         },
         {
             question: "Monica is a _______ freak.",
             choices: ["mean" , "neat",  "loud",  "cool"],
             answer: ["Neat", "1"],
+            imageRight: "images/correct3.gif",
+            imageWrong: "images/wrong3.gif",
         },
         {
             question: "Ross was which of these?",
             choices: ["Lawyer" , "Accountant",  "Magician",  "Doctor"],
             answer: ["Doctor", "3"],
+            imageRight: "images/correct4.gif",
+            imageWrong: "images/wrong4.gif",
         },
         {
             question: "Gunther speaks another language besides English. What is it?",
             choices: ["Dutch" , "German",  "French",  "Spanish"],
             answer: ["Dutch", "0"],
+            imageRight: "images/correct5.gif",
+            imageWrong: "images/wrong5.gif",
         },
         {
             question: "Who came up with Rachel's daughter's name?",
             choices: ["Monica" , "Ross",  "Emily",  "Rachel"],
             answer: ["Monica", "0"],
+            imageRight: "images/correct6.gif",
+            imageWrong: "images/wrong6.gif",
         },
         {
             question: "What country did Phoebe say she was from when she gave Rachel a massage in the massage parlor?",
             choices: ["Canada" , "Sweden",  "Czechia",  "Norway"],
             answer: ["Sweden", "1"],
+            imageRight: "images/correct7.gif",
+            imageWrong: "images/wrong7.gif",
         },
         {
             question: "Whose agent is Estelle?",
             choices: ["Monica" , "Joey",  "Chandler",  "Phoebe"],
             answer: ["Joey", "1"],
+            imageRight: "images/correct8.gif",
+            imageWrong: "images/wrong8.gif",
         },
         {
             question: "How many times did Ross get married?",
             choices: ["One" , "Four",  "Three",  "Five"],
             answer: ["Three", "2"],
+            imageRight: "images/correct9.gif",
+            imageWrong: "images/wrong9.gif",
         },
         {
             question: "Which holiday does Chandler not like?",
             choices: ["Memorial Day" , "Christmas",  "Independence Day",  "Thanksgiving"],
             answer: ["Thanksgiving ", "3"],
+            imageRight: "images/correct10.gif",
+            imageWrong: "images/wrong10.gif",
         },
     
     ]
@@ -60,7 +78,7 @@ $(document).ready(function(){
     var rightAnswers = 0;
     var wrongAnswers = 0;
     var noAnswers = 0;
-    var number = 10;
+    var number = 15;
     var i = 0;
     var intervalId;
 
@@ -109,8 +127,7 @@ $(document).ready(function(){
         var x = document.getElementById("screen");
         x.style.display = "block";
     }
-    
-    
+        
     function startQuestions(){
         
         if (i > 9){
@@ -143,7 +160,8 @@ $(document).ready(function(){
     
     function nextQuestion() {
         i++;
-        number = 10;  
+        number = 15;
+        $("#image").empty()
     }
     
     function run() {
@@ -151,8 +169,7 @@ $(document).ready(function(){
         intervalId = setInterval(decrement, 1000);
     }
      
-      
-    function decrement() {
+      function decrement() {
         number--;
         $("#timer").html("Time remaining: " + number);
         if (number === 0) {
@@ -161,11 +178,13 @@ $(document).ready(function(){
             stop();
             $("#timer").html(" ");
             $("#timer").html("Time's up!  The right answer was: " + questionsArray[i-1].answer[0]);
+            var img = $("<img>").attr("src", questionsArray[i-1].imageWrong);
+            $("#image").append(img);
             gameAreaHide();
             imagesShow()
             delay();
           }
-        }
+    }
     
     function stop() {
         clearInterval(intervalId);
@@ -193,7 +212,7 @@ $(document).ready(function(){
     }
         
     function delay(){
-        setTimeout(startQuestions,1000)
+        setTimeout(startQuestions,4000)
     }
     
     function selection(){
@@ -209,9 +228,11 @@ $(document).ready(function(){
                     imagesShow();
                     delay();
                     
-                // $("#image").append("<img src= 'images/correct1.gif' />");////Show the image///
-
-                }else{
+                    var img = $("<img>").attr("src", questionsArray[i-1].imageRight);
+                    $("#image").append(img);
+                    document.getElementById("image").height = "300";
+                    document.getElementById("image").width = "300";
+                    }else{
                     wrongAnswers++
                     console.log(wrongAnswers)
                     stop();
@@ -220,6 +241,8 @@ $(document).ready(function(){
                     gameAreaHide();
                     imagesShow();
                     delay();
+                    var img = $("<img>").attr("src", questionsArray[i-1].imageWrong);
+                    $("#image").append(img);
                 
                 }
             };

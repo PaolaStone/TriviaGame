@@ -9,75 +9,47 @@
 
     <body>
        
-                
-        <div  class="container-fluid text-center">
-                <img src="images\friendsLogo.jpg">
-                <br>
-               
-                                    
-                    
-        </div>
+    <div  class="container" style="align-items: center; text-align: center;">        
+    <div  class="container-fluid text-center">
+        <img src="images\friendsLogo.jpg">
+    <br>
+    </div>
         <br>
 
-    <div id = "screen" class="card mb-3" style="align-items: center; background-color: lightslategray ">
+    <div id = "screen" class="card mb-3" style="align-items: center;">
         <br>
         <br>
         <br>
-        <img src="images\first1.gif" class="card-img-top" style="width:1000px;height:600px;">
+        <img src="images\first1.gif" class="card-img-top" style="width:600px;height:400px;">
         <br>
         <div class="card-body">
             <h4 id = "right" class="text-center"></h4>
             <h4 id = "wrong" class="text-center"></h4>
             <h4 id = "noAnswer" class="text-center"></h4>
 
-            <button id="start" style= "align-self: center" class="btn btn-light btn-lg btn-block"><h2>Play Trivia Game</h2></button>
+            <button id="start" style= "align-self: center" class="btn btn btn-warning btn-lg"><h2>Play Trivia Game</h2></button>
         </div>
     </div>
-        
-             
-    <div class="container-fluid text-center alert alert-primary">
-            <h4 id = "timer" class="hide"> </h4>
+         
+    <div class="container-fluid text-center alert alert-dark ">
+        <h4 id = "timer" > </h4>
     </div>
 
-    <div id = "gameArea" class="row hide" >
-            <div   class="col-sm p-3 mb-2 alert alert-secondary text-center" style="max-width: 50%rem;">
-                <h4 id = "question" ></h4>
+    <div id = "gameArea" class="row" >
+        <div   class="col-sm p-3 mb-2 alert alert-secondary text-center">
+            <h4 id = "question" ></h4>
                                              
-                <button id = "option1" value= "0"  class="list-group-item list-group-item-action button"></button>
-                <button id = "option2" value= "1"  class="list-group-item list-group-item-action button "></button>
-                <button id = "option3" value= "2"  class="list-group-item list-group-item-action button "></button>
-                <button id = "option4" value= "3"  class="list-group-item list-group-item-action button "></button>
+            <button id = "option1" value= "0"  class="list-group-item list-group-item-action button"></button>
+            <button id = "option2" value= "1"  class="list-group-item list-group-item-action button "></button>
+            <button id = "option3" value= "2"  class="list-group-item list-group-item-action button "></button>
+            <button id = "option4" value= "3"  class="list-group-item list-group-item-action button "></button>
                                       
-            </div>
-    </div>
-        
-    <div id = "image" class="container-fluid text-center ">
-            Images go here
-            <br>
-            Images go here
-            <br>
-            Images go here
-            <br>
-            Images go here
-            <br>
-            Images go here
-            <br>
-            Images go here
-            <br>
-
-        
-    </div>
-            
-        
-
-        <!-- <div class="jumbotron">
-       
-            <h1 style= "text-align: center">Images</h1>
-            
         </div>
-       -->
+    </div>
         
-        <script type="text/javascript" src="javascript\app.js"></script>
+    <div id = "image" class="jumbotron text-center"></div>
+</div>    
+    <script type="text/javascript" src="javascript\app.js"></script>
 
     </body>
 </html>
