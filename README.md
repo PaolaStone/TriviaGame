@@ -1,8 +1,17 @@
-# TriviaGame
+# Friends TriviaGame
 
-Trivia game created using Bootstraps, html, and java.
+How much do you know about them? Test it here!
+
+Play now at https://paolastone.github.io/TriviaGame/
+
+## How it works?
 
 After clicking the start button, a timer will display the remaining time to pick an answer.
-Once an answer is selected it will display if the answer is right or wrong and will specify the right answer.
-If none of the choices is selected, when the time is up, it will display what the right answer is.
-At the end of the game, it will display the total of right, wrong, and unanswered questions.
+Once an answer is selected it will display if it is right or wrong.
+If none of the choices is selected, when the time is up, it will display the right answer for you.
+At the end of the game, you will see the total of right, wrong, and unanswered questions.
+
+![Start page trivia game] (TriviaGame/images/first1.gif)
+
+## Technology
+This project was built with JavaScript, jQuery, Bootstrap, HTML, and CSS.
